@@ -7,23 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/characters.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="map column">
+    <div class="map">
 
     </div>
-    <div class="details column">
+    <div class="details">
         <h1>Game of thrones</h1>
         <img id="detail-pic" src="assets/pictures/jon_snow.jpg" alt="kep">
-        <p>Jon Snow</p>
+        <p id="name">Jon Snow</p>
         <img src=" " alt="">
         <p id="detail-text">Jon is the bastard child of Ned Stark of Winterfell and a unkwnow woman. Soon after his marriage, Ned Stark leaved
             his home to go to fight on the war of the usurper, and returned home carrying a infant that was supposedly his
             own
         </p>
-        <input type="text" name="search" id="search" placeholder="Search a character">
+        <form action="">
+            <input type="button" value=">" class="btn">
+            <i class="fa fa-search" style="font-size:24px"></i>
+            <input type="text" name="search" id="search" placeholder="Search a character">
+        </form>
+
     </div>
     <script src="js/got.js"></script>
 </body>

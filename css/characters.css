@@ -4,46 +4,45 @@ body {
     margin: 0;
 }
 
-.column {
-    float: left;
-    padding: 10px;
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .map {
-    width: 72%;
+    width: 75%;
     background: #D8D8D8 url("../assets/site/mapblue.jpg") no-repeat fixed center;
     background-size: cover;
     height: 800px;
 }
 
 .details {
-    position: relative;
+    position: fixed;
     width: 25%;
+    top: 0;
+    right: 0;
     background-color: grey;
-    height: 800px;
+    height:
 }
 
 .map>div {
     position: relative;
     float: left;
     padding: 10px;
+    text-align: center;
+    width: 100px;
+    height: 120px;
 }
 
 .details>img {
-    width: 100%;
+    width: 90%;
+    margin: auto;
+    padding: 0 5% 5% 5%;
 }
 
 img {
-    width: 60px;
+    width: 75px;
 }
 
 p {
+    width: 90%;
+    margin: auto;
+    padding: 0 5%;
     font-family: 'Bellefair', serif;
     font-size: 0.8em;
     font-variant: small-caps;
@@ -55,7 +54,8 @@ h1 {
     text-align: center;
 }
 
-input {
-    position: absolute;
-    top: 550px;
+form {
+    position: relative;
+    width: 100%;
+    padding: 5%;
 }
