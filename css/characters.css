@@ -2,11 +2,12 @@ body {
     box-sizing: border-box;
     width: auto;
     margin: 0;
+    background: #D8D8D8 url("../assets/site/mapblue.jpg") no-repeat fixed center;
+    background-attachment: fixed;
 }
 
 .map {
     width: 75%;
-    background: #D8D8D8 url("../assets/site/mapblue.jpg") no-repeat fixed center;
     background-size: cover;
     height: 800px;
 }
@@ -16,8 +17,9 @@ body {
     width: 25%;
     top: 0;
     right: 0;
-    background-color: grey;
-    height:
+    background-color: #404040;
+    height: 800px;
+    color: white;
 }
 
 .map>div {
@@ -46,6 +48,8 @@ p {
     font-family: 'Bellefair', serif;
     font-size: 0.8em;
     font-variant: small-caps;
+    max-height: 200px;
+    overflow: auto;
 }
 
 h1 {
@@ -54,8 +58,73 @@ h1 {
     text-align: center;
 }
 
+#name {
+    font: small-caps bold 1em 'Bellefair', serif;
+}
+
+.details>p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: normal;
+    line-height: 1.5em;
+}
+
 form {
     position: relative;
     width: 100%;
     padding: 5%;
+    margin-top: 130px;
+}
+
+#search,
+form>div {
+    position: relative;
+    float: left;
+    outline: 0;
+    padding: 11px;
+    font-family: inherit;
+    border-width: 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form>div:nth-child(2) {
+    padding: 0;
+}
+
+#search {
+    width: 120%;
+    margin-left: 10px;
+    text-indent: 25px;
+}
+
+div>i {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: middle;
+}
+
+form>div:nth-child(2)>i {
+    position: absolute;
+    margin-left: -60px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form>div:first-child {
+    border-color: white;
+    border-style: solid;
+    border-width: 0.1em;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+}
+
+form>div:first-child:hover {
+    cursor: pointer;
 }
