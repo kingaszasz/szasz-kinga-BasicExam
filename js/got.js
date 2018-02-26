@@ -22,12 +22,24 @@ function successAjax(xhttp) {
       A userDatas NEM GLOBÁLIS változó, ne is tegyétek ki globálisra. Azaz TILOS!
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
+    var inp;
+    inp = document.getElementById("search").value;
+
     generateDivChild(userDatas);
     myEventListenerAdd(userDatas);
 
 }
-
-
+/*
+function search(data) {
+    var inp;
+    inp = document.getElementById("search").value;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].name == inp) {
+            document.getElementById("detail-text").innerHTML = data[i].bio;
+            document.getElementById("detail-pic").setAttribute("src", data[i].portrait);
+            document.getElementById("name").innerHTML = data[i].name;
+        }
+    }*/
 
 
 
