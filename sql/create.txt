@@ -1,0 +1,19 @@
+CREATE DATABASE got
+CHARACTER SET utf8
+COLLATE utf8_hungarian_ci
+
+CREATE TABLE characters (
+    id bigint NOT NULL AUTO_INCREMENT, 	
+	dead varchar (10),
+    name varchar(100) NOT NULL,
+    alias varchar(50),
+    portrait varchar(50) NOT null,
+    picture varchar(50) NOT null,
+    bio text,
+    organization varchar(250),
+    house varchar(250),
+    CONSTRAINT pk_char PRIMARY KEY (id)
+) ENGINE INNODB;
+	
+
+
