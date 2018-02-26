@@ -23,6 +23,7 @@ function successAjax(xhttp) {
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
     generateDivChild(userDatas);
+    myEventListenerAdd(userDatas);
 
 }
 
@@ -35,13 +36,31 @@ function generateDivChild(data) {
         var div = document.createElement('div');
         var img = document.createElement('img');
         img.setAttribute("src", data[i].portrait);
+
+        /*img.addEventListener('click', function () {
+            myShow(data[i]);
+        });*/
+
         div.appendChild(img);
         var pElem = document.createElement('p');
         pElem.innerHTML = data[i].name;
         div.appendChild(pElem);
         document.querySelector('.map').appendChild(div);
     }
+}
 
+
+function myEventListenerAdd(data) {
+    var images = document.querySelectorAll('img');
+    //images.forEach(addEventListener('click', myAttributes()));
+    console.log(images);
+
+}
+
+function myShow(object) {
+    var pic = document.getElementById('detail-pic');
+    pic.setAttribute("src", object.picture);
+    console.log(pic);
 }
 
 
