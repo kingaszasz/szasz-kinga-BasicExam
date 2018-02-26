@@ -1,0 +1,29 @@
+body {
+    box-sizing: border-box;
+    width: auto;
+    margin: 0;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.map {
+    width: 72%;
+    background: #D8D8D8 url("../assets/site/mapblue.jpg") no-repeat fixed center;
+    background-size: cover;
+    height: 800px;
+}
+
+.details {
+    width: 25%;
+    background-color: grey;
+    height: 800px;
+}
