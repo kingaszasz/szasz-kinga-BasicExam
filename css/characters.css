@@ -27,3 +27,19 @@ body {
     background-color: grey;
     height: 800px;
 }
+
+.map>div {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+img {
+    width: 60px;
+}
+
+p {
+    font-family: 'Bellefair', serif;
+    font-size: 0.8em;
+    font-variant: small-caps;
+}
