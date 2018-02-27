@@ -31,10 +31,15 @@ body {
     height: 120px;
 }
 
-.details>img {
-    width: 90%;
+.map>div>img:hover {
+    cursor: pointer;
+}
+
+#detail-pic {
+    width: 330px;
+    height: 190px;
     margin: auto;
-    padding: 0 5% 5% 5%;
+    padding: 0 5% 0% 5%;
 }
 
 img {
@@ -62,17 +67,25 @@ h1 {
     font: small-caps bold 1em 'Bellefair', serif;
 }
 
+#house {
+    position: absolute;
+    top: 290px;
+    right: 30px;
+    width: 30px;
+}
+
 .details>p {
     font-family: Arial, Helvetica, sans-serif;
     font-variant: normal;
     line-height: 1.5em;
+    margin-top: 20px;
 }
 
 form {
-    position: relative;
+    position: absolute;
     width: 100%;
-    padding: 5%;
-    margin-top: 130px;
+    top: 650px;
+    left: 15px;
 }
 
 #search,
@@ -95,7 +108,7 @@ form>div:nth-child(2) {
 #search {
     width: 120%;
     margin-left: 10px;
-    text-indent: 25px;
+    text-indent: 30px;
 }
 
 div>i {
@@ -109,7 +122,7 @@ div>i {
 
 form>div:nth-child(2)>i {
     position: absolute;
-    margin-left: -60px;
+    margin-left: -65px;
     z-index: 1;
     top: 50%;
     left: 50%;

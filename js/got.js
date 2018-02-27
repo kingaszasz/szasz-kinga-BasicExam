@@ -22,11 +22,9 @@ function successAjax(xhttp) {
       A userDatas NEM GLOBÁLIS változó, ne is tegyétek ki globálisra. Azaz TILOS!
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
-    var inp;
-    inp = document.getElementById("search").value;
+
 
     generateDivChild(userDatas);
-    myEventListenerAdd(userDatas);
 
 }
 /*
@@ -45,35 +43,37 @@ function search(data) {
 
 function generateDivChild(data) {
     for (var i = 0; i < data.length; i++) {
-        var div = document.createElement('div');
-        var img = document.createElement('img');
-        img.setAttribute("src", data[i].portrait);
-
-        /*img.addEventListener('click', function () {
-            myShow(data[i]);
-        });*/
-
-        div.appendChild(img);
-        var pElem = document.createElement('p');
-        pElem.innerHTML = data[i].name;
-        div.appendChild(pElem);
-        document.querySelector('.map').appendChild(div);
+        (function (e) {
+            var div = document.createElement('div');
+            var img = document.createElement('img');
+            img.setAttribute("src", data[e].portrait);
+            img.addEventListener('click', function () {
+                showDetail(e, data);
+            });
+            div.appendChild(img);
+            var pElem = document.createElement('p');
+            pElem.innerHTML = data[i].name;
+            div.appendChild(pElem);
+            document.querySelector('.map').appendChild(div);
+        })(i);
     }
 }
 
 
-function myEventListenerAdd(data) {
-    var images = document.querySelectorAll('img');
-    //images.forEach(addEventListener('click', myAttributes()));
-    console.log(images);
 
-}
 
-function myShow(object) {
+function showDetail(e, data) {
     var pic = document.getElementById('detail-pic');
-    pic.setAttribute("src", object.picture);
-    console.log(pic);
+    var name = document.getElementById('name');
+    var text = document.getElementById('detail-text');
+    var house = document.getElementById('house');
+    pic.setAttribute("src", data[e].picture);
+    name.textContent = data[e].name;
+    text.textContent = data[e].bio;
+    house.setAttribute("src", `assets/houses/${data[e].house}.png`);
+    //    console.log(data[e]);
 }
+
 
 
 
