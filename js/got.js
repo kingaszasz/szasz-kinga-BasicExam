@@ -23,7 +23,7 @@ function successAjax(xhttp) {
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
 
-
+    sortByname(userDatas);
     generateDivChild(userDatas);
 
 }
@@ -75,8 +75,18 @@ function showDetail(e, data) {
 }
 
 
-
-
+function sortByname(data) {
+    var temp;
+    for (var i = 0; i < data.length - 1; i++) {
+        for (var j = i + 1; j < data.length; j++) {
+            if (data[i].name > data[j].name) {
+                temp = data[i];
+                data[i] = data[j];
+                data[j] = temp;
+            }
+        }
+    }
+}
 
 // Írd be a json fileod nevét/útvonalát úgy, ahogy nálad van
 getData('json/characters.json', successAjax);
