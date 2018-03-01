@@ -22,23 +22,47 @@ function successAjax(xhttp) {
       A userDatas NEM GLOBÁLIS változó, ne is tegyétek ki globálisra. Azaz TILOS!
       Ha valemelyik függvényeteknek kell, akkor paraméterként adjátok át.
     */
+    var liveCharacters = dropDead(userDatas);
+    sortByname(liveCharacters);
+    generateDivChild(liveCharacters);
 
-    sortByname(userDatas);
-    generateDivChild(userDatas);
-
+    document.getElementById("btn").addEventListener("click", function () {
+        search(liveCharacters);
+    });
 }
-/*
-function search(data) {
-    var inp;
-    inp = document.getElementById("search").value;
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].name == inp) {
-            document.getElementById("detail-text").innerHTML = data[i].bio;
-            document.getElementById("detail-pic").setAttribute("src", data[i].portrait);
-            document.getElementById("name").innerHTML = data[i].name;
-        }
-    }*/
 
+
+function dropDead(data) {
+    var liveCharacters = [];
+    for (var i = 0; i < data.length; i++) {
+        if (!data[i].dead) {
+            liveCharacters.push(data[i]);
+        }
+    }
+    console.log(liveCharacters);
+    return liveCharacters;
+}
+
+
+
+function search(data) {
+    var text = document.getElementById('search');
+    var found = false;
+    if (!text.value || text.value == ' ') {
+        text.value = "Give me the name";
+    } else {
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].name == text.value) {
+                console.log(data[i].name);
+                showDetail(i, data);
+                found = true;
+            }
+        }
+        if (!found) {
+            text.value = "Character not found!";
+        }
+    }
+}
 
 
 function generateDivChild(data) {
@@ -58,8 +82,6 @@ function generateDivChild(data) {
         })(i);
     }
 }
-
-
 
 
 function showDetail(e, data) {

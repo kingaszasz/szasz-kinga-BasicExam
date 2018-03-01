@@ -27,7 +27,7 @@ body {
     float: left;
     padding: 10px;
     text-align: center;
-    width: 100px;
+    width: 120px;
     height: 120px;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 img {
-    width: 75px;
+    width: 85px;
 }
 
 p {
@@ -92,7 +92,6 @@ form {
 form>div {
     position: relative;
     float: left;
-    outline: 0;
     padding: 11px;
     font-family: inherit;
     border-width: 0;
